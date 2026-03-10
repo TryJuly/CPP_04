@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 15:22:50 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 09:52:16 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/10 15:28:31 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/10 15:29:43 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include "AMateria.hpp"
 
-# include "Animal.hpp"
+AMateria::AMateria()
+{}
 
-class Dog: public Animal
-{
-	public:
-		Dog();
-		Dog(Dog const &copy);
-		virtual ~Dog();
+AMateria::AMateria(AMateria const &copy)
+{}
 
-		Dog&	operator=(Dog const &copy);
-		virtual void	makeSound(void) const;
-};
+AMateria::AMateria(std::string const &type)
+{}
 
-#endif
+AMateria::~AMateria()
+{}
+
+AMateria&	AMateria::operator=(AMateria const &copy)
+{}

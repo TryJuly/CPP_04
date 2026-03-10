@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 15:22:50 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 09:52:16 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/10 15:14:45 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/10 15:15:01 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
-
-# include "Animal.hpp"
-
-class Dog: public Animal
+int	main(void)
 {
-	public:
-		Dog();
-		Dog(Dog const &copy);
-		virtual ~Dog();
-
-		Dog&	operator=(Dog const &copy);
-		virtual void	makeSound(void) const;
-};
-
-#endif
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:03:00 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/09 15:30:34 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/10 09:51:56 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ class Animal
 	public:
 		Animal();
 		Animal(Animal const &copy);
-		~Animal();
+		virtual ~Animal();
 
 		Animal&	operator=(Animal const &copy);
-		virtual void	makeSound(void);
+		virtual void	makeSound(void) const;
+		const std::string&	getType(void) const;
 
 	protected:
 		std::string	_type;
