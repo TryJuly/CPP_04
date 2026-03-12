@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:29:37 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 16:53:30 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/12 10:42:43 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@
 
 class Ice: public AMateria
 {
-	
+	public:
+		Ice();
+		Ice(Ice const &copy);
+		~Ice();
+
+		Ice&	operator=(Ice const &copy);
 };
 
 #endif

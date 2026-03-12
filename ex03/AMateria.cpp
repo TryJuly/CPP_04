@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:28:31 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 16:52:13 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/12 08:04:38 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ AMateria&	AMateria::operator=(AMateria const &copy)
 	return (*this);
 }
 
-void	AMateria::use(ICharater& target)
-{}
+void	AMateria::use(ICharacter& target)
+{
+	// std::cout << this->getType() << ": "
+}
 
 std::string const &AMateria::getType() const
 {

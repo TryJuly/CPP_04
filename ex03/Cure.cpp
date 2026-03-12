@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 16:39:20 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/12 10:36:19 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/12 10:38:14 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/12 11:14:08 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#include "Cure.hpp"
 
-# include "AMateria.hpp"
-# include <string>
-
-class ICharacter
+Cure::Cure()
 {
-	public:
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-};
+	this->_type = "cure";
+	return ;
+}
 
-#endif
+Cure::Cure(Cure const &copy)
+{
+	this->_type = copy._type;
+	return ;
+}
+
+Cure::~Cure() {}
+
+Cure&	Cure::operator=(Cure const &copy)
+{
+	this->_type = copy._type;
+	return ;
+}
+
+AMateria*	Cure::clone() const {return (new Cure);}
+
+void	Cure::use(ICharacter& target)
+{
+	
+}
+
+std::string const &Cure::getType() const
+{}
