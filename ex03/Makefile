@@ -3,30 +3,33 @@
 #################################################################################################################
 NAME = exec
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
+FLAGS =  -std=c++98
 
-SRCS = main.cpp
+INCLUDES = includes
+OBJ_DIR = objets
 
-OBJS = ${addprefix ${OBJ_DIR}/,${SRCS:.cpp=.o}}
-OBJ_DIR = objets/
+VPATH = srcs
+SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp \
+        MateriaSource.cpp
+
+OBJS = ${patsubst %.cpp, ${OBJ_DIR}/%.o, ${SRCS}}
 #################################################################################################################
 #                                           RULES COMPILATION                                                   #
 #################################################################################################################
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
+	${CC} ${FLAGS} ${OBJS} -I ${INCLUDES} -o ${NAME}
 
 ${OBJ_DIR}/%.o: %.cpp
 	@mkdir -p ${OBJ_DIR}
-	${CXX} ${CXXFLAGS} -c $< -o $@
-
+	${CC} ${FLAGS} -c $< -o $@ -I${INCLUDES}
 #################################################################################################################
 #                                           RULES CLEAN                                                         #
 #################################################################################################################
 clean:
-	rm -rf ${OBJ_DIR}/ ${OBJS}
+	rm -rf ${OBJ_DIR}
 
 fclean: clean
 	rm -rf ${NAME}
@@ -35,5 +38,4 @@ re: fclean all
 #################################################################################################################
 #                                           NO RELINK                                                           #
 #################################################################################################################
-
 .PHONY: all clean fclean re

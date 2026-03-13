@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 08:11:27 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/12 10:36:39 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/13 09:47:27 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ class Character: public ICharacter
 		Character();
 		Character(Character const &copy);
 		Character(std::string const &name);
-		~Character();
+		virtual ~Character();
 
 		Character&	operator=(Character const &copy);
-		std::string const & getName() const override;
-		void equip(AMateria* m) override;
-		void unequip(int idx) override;
-		void use(int idx, ICharacter& target) override;
+		std::string const & getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 
 		private:
 			std::string	_name;
-			AMateria	*_slot[4];
+			AMateria	*_inventory[4];
 };
 
 #endif

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 10:43:02 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/12 10:44:37 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/12 09:44:23 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/13 09:19:07 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#ifndef CURE_HPP
+# define CURE_HPP
 
-Ice::Ice()
+# include "AMateria.hpp"
+
+class Cure: public AMateria
 {
-	this->_type = "ice";
-	return ;
-}
+	public:
+		Cure();
+		Cure(Cure const &copy);
+		virtual ~Cure();
 
-Ice::Ice(Ice const &copy)
-{
-	this->_type = copy._type;
-	return ;
-}
+		Cure&	operator=(Cure const &copy);
+		virtual AMateria*	clone() const;
+		virtual void	use(ICharacter& target);
+		std::string const &getType() const;
+};
 
-Ice::~Ice() {}
-
-Ice&	Ice::operator=(Ice const &copy)
-{
-	this->_type = copy._type;
-	return ;
-}
+#endif

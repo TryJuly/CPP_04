@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 09:44:23 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/12 11:08:18 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/10 16:29:37 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/13 09:19:11 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-# define CURE_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
 # include "AMateria.hpp"
 
-class Cure: public AMateria
+class Ice: public AMateria
 {
 	public:
-		Cure();
-		Cure();
-		~Cure();
+		Ice();
+		Ice(Ice const &copy);
+		virtual ~Ice();
 
-		Cure&	operator=(Cure const &copy);
-		virtual AMateria*	clone() const override;
-		virtual void	use(ICharacter& target) override;
-		std::string const &getType() const override;
+		Ice&	operator=(Ice const &copy);
+		virtual AMateria*	clone() const;
+		virtual void	use(ICharacter& target);
+		std::string const &getType() const;
 };
 
 #endif

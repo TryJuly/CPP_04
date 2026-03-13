@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 16:29:37 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/12 10:42:43 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/13 09:38:32 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/13 10:49:31 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#include "AMateria.hpp"
 
-# include "AMateria.hpp"
+AMateria::~AMateria() {}
+AMateria::AMateria(): _type("empty") {}
+AMateria::AMateria(std::string const &type): _type(type) {}
 
-class Ice: public AMateria
+AMateria::AMateria(AMateria const &copy)
 {
-	public:
-		Ice();
-		Ice(Ice const &copy);
-		~Ice();
+	this->_type = copy._type;
+	return ;
+}
 
-		Ice&	operator=(Ice const &copy);
-};
-
-#endif
+AMateria&	AMateria::operator=(AMateria const &copy)
+{
+	if (this != &copy)
+	{
+		this->_type = copy._type;
+	}
+	return (*this);
+}
