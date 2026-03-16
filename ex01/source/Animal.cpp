@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:06:19 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 15:00:44 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:33:18 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "../header/Animal.hpp"
 
-AAnimal::AAnimal(): _type("Animal")
+Animal::Animal(): _type("Animal")
 {
 	std::cout << "Default Animal constructor called" << std::endl;
 	return ;
 }
 
-AAnimal::AAnimal(AAnimal const &copy) : _type(copy._type)
+Animal::Animal(Animal const &copy) : _type(copy._type)
 {
 	std::cout << "Copy constructor Animal called" << std::endl;
 	return ;
 }
 
-AAnimal::~AAnimal()
+Animal::~Animal()
 {
 	std::cout << "Destructor Animal called" << std::endl;
 	return ;
 }
 
-AAnimal&	AAnimal::operator=(AAnimal const &copy)
+Animal&	Animal::operator=(Animal const &copy)
 {
 	if (this != &copy)
 		this->_type = copy._type;
@@ -38,7 +38,13 @@ AAnimal&	AAnimal::operator=(AAnimal const &copy)
 	return (*this);
 }
 
-const std::string&	AAnimal::getType(void) const
+void	Animal::makeSound(void) const
+{
+	std::cout << "Silence" << std::endl;
+	return ;
+}
+
+const std::string&	Animal::getType(void) const
 {
 	return (this->_type);
 }

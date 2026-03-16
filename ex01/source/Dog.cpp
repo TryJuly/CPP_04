@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 15:37:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 14:41:27 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/09 15:27:32 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/16 15:33:11 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../header/Dog.hpp"
 
-Cat::Cat()
+Dog::Dog()
 {
-	std::cout << "Default Cat constructor called" << std::endl;
-	this->_type = "Cat";
+	std::cout << "Default Dog constructor called" << std::endl;
+	this->_type = "Dog";
 	this->_newBrain = new Brain;
 	return ;
 }
 
-Cat::Cat(Cat const &copy)
+Dog::Dog(Dog const &copy)
 {
-	std::cout << "Copy constructor Cat called" << std::endl;
+	std::cout << "Copy constructor Dog called" << std::endl;
 	this->_type = copy._type;
 	this->_newBrain = new Brain;
 	for (int i = 0; i < 100; i++)
@@ -30,14 +30,14 @@ Cat::Cat(Cat const &copy)
 	return ;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete _newBrain;
-	std::cout << "Destructor Cat called" << std::endl;
+	std::cout << "Destructor Dog called" << std::endl;
 	return ;
 }
 
-Cat&	Cat::operator=(Cat const &copy)
+Dog&	Dog::operator=(Dog const &copy)
 {
 	if (this != &copy)
 	{
@@ -45,22 +45,22 @@ Cat&	Cat::operator=(Cat const &copy)
 		for (int i = 0; i < 100; i++)
 			this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
 	}
-	std::cout << "Copy assignment Cat called" << std::endl;
+	std::cout << "Copy assignment Dog called" << std::endl;
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
+void	Dog::makeSound(void) const
 {
-	std::cout << "Meow !" << std::endl;
+	std::cout << "Bark !" << std::endl;
 	return ;
 }
 
-const std::string	Cat::getIdeas(const unsigned int index)
+const std::string	Dog::getIdeas(const unsigned int index)
 {
 	return (this->_newBrain->_ideas[index]);
 }
 
-void	Cat::setIdeas(std::string const &idea, unsigned int index)
+void	Dog::setIdeas(std::string const &idea, unsigned int index)
 {
 	this->_newBrain->_ideas[index] = idea;
 	return ;

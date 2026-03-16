@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:13:42 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/13 11:04:44 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:43:51 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	MateriaSource::learnMateria(AMateria* m)
 			return ;
 		}
 	}
-	// delete m
 	std::cout << "Learning inventory is full" << std::endl;
 	return ;
 }

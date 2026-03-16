@@ -6,11 +6,11 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 09:19:33 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 09:47:01 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:33:45 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "../header/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(): _type("WrongAnimal")
 {

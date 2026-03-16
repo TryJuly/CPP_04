@@ -6,15 +6,15 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:59:29 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 10:06:33 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:33:40 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "../header/Animal.hpp"
+#include "../header/Dog.hpp"
+#include "../header/Cat.hpp"
+#include "../header/WrongAnimal.hpp"
+#include "../header/WrongCat.hpp"
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 	std::cout << "Dog sound   : ";
 	j->makeSound();
 	std::cout << "Cat sound   : ";
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	std::cout << std::endl;
 	
 	delete (meta);

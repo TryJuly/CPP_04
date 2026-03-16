@@ -6,27 +6,29 @@ NAME = exec
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
+INCLUDES = header
+OBJ_DIR = objets
+
+VPATH = source
 SRCS = main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
 
-OBJS = ${addprefix ${OBJ_DIR}/,${SRCS:.cpp=.o}}
-OBJ_DIR = objets/
+OBJS = ${patsubst %.cpp, ${OBJ_DIR}/%.o, ${SRCS}}
 #################################################################################################################
 #                                           RULES COMPILATION                                                   #
 #################################################################################################################
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
+	${CXX} ${CXXFLAGS} ${OBJS} -I ${INCLUDES} -o ${NAME}
 
 ${OBJ_DIR}/%.o: %.cpp
 	@mkdir -p ${OBJ_DIR}
-	${CXX} ${CXXFLAGS} -c $< -o $@
-
+	${CXX} ${CXXFLAGS} -c $< -o $@ -I${INCLUDES}
 #################################################################################################################
 #                                           RULES CLEAN                                                         #
 #################################################################################################################
 clean:
-	rm -rf ${OBJ_DIR}/ ${OBJS}
+	rm -rf ${OBJ_DIR}
 
 fclean: clean
 	rm -rf ${NAME}
@@ -35,5 +37,4 @@ re: fclean all
 #################################################################################################################
 #                                           NO RELINK                                                           #
 #################################################################################################################
-
 .PHONY: all clean fclean re

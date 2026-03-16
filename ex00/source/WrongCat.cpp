@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/09 15:37:56 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 09:10:40 by strieste         ###   ########.fr       */
+/*   Created: 2026/03/10 09:29:36 by strieste          #+#    #+#             */
+/*   Updated: 2026/03/16 15:33:47 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../header/WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	std::cout << "Default Cat constructor called" << std::endl;
-	this->_type = "Cat";
+	this->_type = "WrongCat";
+	std::cout << "Default WrongCat constructor called" << std::endl;
 	return ;
 }
 
-Cat::Cat(Cat const &copy)
+WrongCat::WrongCat(WrongCat const &copy)
 {
-	std::cout << "Copy constructor Cat called" << std::endl;
 	this->_type = copy._type;
+	std::cout << "Copy constructor WrongCat called" << std::endl;
 	return ;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Destructor Cat called" << std::endl;
+	std::cout << "Destructor WrongCat called" << std::endl;
 	return ;
 }
 
-Cat&	Cat::operator=(Cat const &copy)
+WrongCat&	WrongCat::operator=(WrongCat const &copy)
 {
 	if (this != &copy)
 		this->_type = copy._type;
-	std::cout << "Copy assignment Cat called" << std::endl;
+	std::cout << "Copy assignment Animal called" << std::endl;
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
-{
-	std::cout << "Meow !" << std::endl;
-	return ;
-}

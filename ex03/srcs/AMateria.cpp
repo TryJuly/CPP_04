@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:38:32 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/13 10:49:31 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:40:03 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ AMateria::AMateria(AMateria const &copy)
 AMateria&	AMateria::operator=(AMateria const &copy)
 {
 	if (this != &copy)
-	{
 		this->_type = copy._type;
-	}
 	return (*this);
 }

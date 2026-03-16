@@ -6,11 +6,11 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:06:19 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 09:33:18 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:33:25 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../header/Animal.hpp"
 
 Animal::Animal(): _type("Animal")
 {

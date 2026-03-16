@@ -6,17 +6,16 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:27:32 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 14:42:14 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/16 15:33:30 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../header/Dog.hpp"
 
 Dog::Dog()
 {
 	std::cout << "Default Dog constructor called" << std::endl;
 	this->_type = "Dog";
-	this->_newBrain = new Brain;
 	return ;
 }
 
@@ -24,15 +23,11 @@ Dog::Dog(Dog const &copy)
 {
 	std::cout << "Copy constructor Dog called" << std::endl;
 	this->_type = copy._type;
-	this->_newBrain = new Brain;
-	for (int i = 0; i < 100; i++)
-			this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
 	return ;
 }
 
 Dog::~Dog()
 {
-	delete _newBrain;
 	std::cout << "Destructor Dog called" << std::endl;
 	return ;
 }
@@ -40,11 +35,7 @@ Dog::~Dog()
 Dog&	Dog::operator=(Dog const &copy)
 {
 	if (this != &copy)
-	{
 		this->_type = copy._type;
-		for (int i = 0; i < 100; i++)
-			this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
-	}
 	std::cout << "Copy assignment Dog called" << std::endl;
 	return (*this);
 }
@@ -52,16 +43,5 @@ Dog&	Dog::operator=(Dog const &copy)
 void	Dog::makeSound(void) const
 {
 	std::cout << "Bark !" << std::endl;
-	return ;
-}
-
-const std::string	Dog::getIdeas(const unsigned int index)
-{
-	return (this->_newBrain->_ideas[index]);
-}
-
-void	Dog::setIdeas(std::string const &idea, unsigned int index)
-{
-	this->_newBrain->_ideas[index] = idea;
 	return ;
 }
