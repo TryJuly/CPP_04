@@ -3,15 +3,14 @@
 #################################################################################################################
 NAME = exec
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDES = header
 OBJ_DIR = objets
 
 VPATH = source
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp \
-		WrongCat.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS = ${patsubst %.cpp, ${OBJ_DIR}/%.o, ${SRCS}}
 #################################################################################################################
@@ -20,11 +19,11 @@ OBJS = ${patsubst %.cpp, ${OBJ_DIR}/%.o, ${SRCS}}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${CXX} ${CXXFLAGS} ${OBJS} -I ${INCLUDES} -o ${NAME}
+	${CC} ${FLAGS} ${OBJS} -I ${INCLUDES} -o ${NAME}
 
 ${OBJ_DIR}/%.o: %.cpp
 	@mkdir -p ${OBJ_DIR}
-	${CXX} ${CXXFLAGS} -c $< -o $@ -I${INCLUDES}
+	${CC} ${FLAGS} -c $< -o $@ -I${INCLUDES}
 #################################################################################################################
 #                                           RULES CLEAN                                                         #
 #################################################################################################################

@@ -6,11 +6,11 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:13:42 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:43:51 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:56:27 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "../header/MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -68,6 +68,7 @@ void	MateriaSource::learnMateria(AMateria* m)
 			return ;
 		}
 	}
+	// delete m
 	std::cout << "Learning inventory is full" << std::endl;
 	return ;
 }

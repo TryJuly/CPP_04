@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:59:29 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:33:40 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:18:07 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
 	std::cout << "Dog sound   : ";
 	j->makeSound();
 	std::cout << "Cat sound   : ";
-	i->makeSound();
+	i->makeSound(); //will output the cat sound!
 	std::cout << std::endl;
 	
 	delete (meta);
@@ -48,8 +48,8 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Call without Virtual makeSound" << std::endl;
 	std::cout << std::endl;
-	std::cout << ptr->getType() << " " << std::endl;
-	std::cout << ptr1->getType() << " " << std::endl;
+	std::cout << ptr->getType() << std::endl;
+	std::cout << ptr1->getType() << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "WrongAnimal sound: ";

@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:22:50 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 15:07:20 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:31:53 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Dog: public Animal
 		const std::string	getIdeas(const unsigned int index);
 		void	setIdeas(std::string const &idea, unsigned int index);
 
-		private:
-			Brain	*_newBrain;
+	private:
+		Brain	*_newBrain;
 };
 
 #endif

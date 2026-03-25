@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 08:11:27 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/13 09:47:27 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:58:50 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ class Character: public ICharacter
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
 
-		private:
-			std::string	_name;
-			AMateria	*_inventory[4];
+	private:
+		std::string	_name;
+		AMateria	*_inventory[4];
 };
 
 #endif

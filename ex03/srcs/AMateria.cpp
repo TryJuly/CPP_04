@@ -6,11 +6,11 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:38:32 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:40:03 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:55:37 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "../header/AMateria.hpp"
 
 AMateria::~AMateria() {}
 AMateria::AMateria(): _type("empty") {}
@@ -25,6 +25,8 @@ AMateria::AMateria(AMateria const &copy)
 AMateria&	AMateria::operator=(AMateria const &copy)
 {
 	if (this != &copy)
+	{
 		this->_type = copy._type;
+	}
 	return (*this);
 }

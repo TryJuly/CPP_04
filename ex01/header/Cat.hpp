@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:36:10 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:34:02 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/10 15:07:16 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Animal.hpp"
 # include "Brain.hpp"
+# include <new>
 
 class Cat: public Animal
 {

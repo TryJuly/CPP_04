@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 10:14:32 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:39:09 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:51:37 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,19 @@ Brain&	Brain::operator=(Brain const &copy)
 	}
 	std::cout << "Copy assignment Brain called" << std::endl;
 	return (*this);
+}
+
+std::string const	Brain::getIdeasBrain(int index) const
+{
+	if (index < 0 || index >= 100)
+		return (NULL);
+	return (_ideas[index]);
+}
+
+void	Brain::setIdeasBrain(std::string const &ideas, int index)
+{
+	if (index < 0 || index >= 100)
+		return ;
+	_ideas[index] = ideas;
+	return ;
 }

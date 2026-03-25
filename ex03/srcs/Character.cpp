@@ -6,11 +6,11 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 09:45:46 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/13 10:58:16 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 14:00:19 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "../header/Character.hpp"
 
 Character::Character(): _name("DefaultName")
 {
@@ -53,7 +53,7 @@ Character&	Character::operator=(Character const &copy)
 	{
 		for (int i = 0; i < 4; i++)
 			if (this->_inventory[i])
-				delete this->_inventory[i];
+				delete _inventory[i];
 		for (int i = 0; i < 4; i++)
 		{
 			if (copy._inventory[i])

@@ -6,22 +6,22 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:36:44 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/13 11:20:53 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 14:09:51 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "ICharacter.hpp"
-#include "IMateriaSource.hpp"
-#include "MateriaSource.hpp"
+#include "../header/AMateria.hpp"
+#include "../header/Character.hpp"
+#include "../header/Cure.hpp"
+#include "../header/Ice.hpp"
+#include "../header/ICharacter.hpp"
+#include "../header/IMateriaSource.hpp"
+#include "../header/MateriaSource.hpp"
 #include <iostream>
 
 int main()
 {
-	std::cout << "\n #####	Subject	#####" << std::endl;
+	std::cout << "#####	Subject	#####" << std::endl;
 	
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());

@@ -6,22 +6,21 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 10:02:17 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:42:34 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:56:14 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "../header/Cure.hpp"
 
-Cure::~Cure() { return ; }
-Cure::Cure(): AMateria("cure") { return ; }
-AMateria*	Cure::clone() const { return (new Cure); }
-std::string const	&Cure::getType() const { return (this->_type); }
+Cure::Cure(): AMateria("cure") {}
 
 Cure::Cure(Cure const &copy)
 {
 	this->_type = copy._type;
 	return ;
 }
+
+Cure::~Cure() {}
 
 Cure&	Cure::operator=(Cure const &copy)
 {
@@ -30,8 +29,18 @@ Cure&	Cure::operator=(Cure const &copy)
 	return (*this);
 }
 
+AMateria*	Cure::clone() const
+{
+	return (new Cure);
+}
+
 void	Cure::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;
+}
+
+std::string const	&Cure::getType() const
+{
+	return (this->_type);
 }

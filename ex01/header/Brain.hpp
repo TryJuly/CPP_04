@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 10:12:59 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/10 15:07:11 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:46:29 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ class Brain
 		virtual ~Brain();
 
 		Brain&	operator=(Brain const &copy);
+		std::string const	getIdeasBrain(int index) const;
+		void	setIdeasBrain(std::string const &ideas, int index);
 
+	private:
 		std::string	_ideas[100];
-		private:
 };
 
 #endif

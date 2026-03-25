@@ -6,7 +6,7 @@
 /*   By: strieste <strieste@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 15:27:32 by strieste          #+#    #+#             */
-/*   Updated: 2026/03/16 15:39:14 by strieste         ###   ########.fr       */
+/*   Updated: 2026/03/25 13:52:05 by strieste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,15 @@ Dog::Dog(Dog const &copy)
 	this->_type = copy._type;
 	this->_newBrain = new Brain;
 	for (int i = 0; i < 100; i++)
-			this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
+		_newBrain->setIdeasBrain(copy._newBrain->getIdeasBrain(i), i);
+			// this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
 	return ;
 }
 
 Dog::~Dog()
 {
-	delete _newBrain;
+	if (_newBrain != NULL)
+		delete _newBrain;
 	std::cout << "Destructor Dog called" << std::endl;
 	return ;
 }
@@ -42,8 +44,14 @@ Dog&	Dog::operator=(Dog const &copy)
 	if (this != &copy)
 	{
 		this->_type = copy._type;
+		if (_newBrain != NULL)
+		{
+			delete _newBrain;
+			_newBrain = new Brain;
+		}
 		for (int i = 0; i < 100; i++)
-			this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
+			_newBrain->setIdeasBrain(copy._newBrain->getIdeasBrain(i), i);
+			// this->_newBrain->_ideas[i] = copy._newBrain->_ideas[i];
 	}
 	std::cout << "Copy assignment Dog called" << std::endl;
 	return (*this);
@@ -57,11 +65,11 @@ void	Dog::makeSound(void) const
 
 const std::string	Dog::getIdeas(const unsigned int index)
 {
-	return (this->_newBrain->_ideas[index]);
+	return (this->_newBrain->getIdeasBrain(index));
 }
 
 void	Dog::setIdeas(std::string const &idea, unsigned int index)
 {
-	this->_newBrain->_ideas[index] = idea;
+	this->_newBrain->setIdeasBrain(idea, index);
 	return ;
 }

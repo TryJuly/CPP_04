@@ -4,14 +4,14 @@
 NAME = exec
 
 CC = c++
-FLAGS =  -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDES = includes
 OBJ_DIR = objets
 
 VPATH = srcs
 SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp \
-        MateriaSource.cpp
+		MateriaSource.cpp
 
 OBJS = ${patsubst %.cpp, ${OBJ_DIR}/%.o, ${SRCS}}
 #################################################################################################################
